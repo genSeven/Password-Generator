@@ -2,7 +2,7 @@ import random
 import string
 
 def generate_password(length):
-    if length < 4:  # Ensure password is at least 4 characters long to include all character types
+    if length < 4: 
         return "Password length should be at least 4."
 
     # Define the character sets to be used in the password
@@ -11,7 +11,7 @@ def generate_password(length):
     digits = string.digits
     symbols = string.punctuation
 
-    # Ensure the password includes at least one character from each character set
+
     password = [
         random.choice(lower),
         random.choice(upper),
@@ -19,7 +19,6 @@ def generate_password(length):
         random.choice(symbols)
     ]
 
-    # Fill the rest of the password length with random choices from all character sets
     all_characters = lower + upper + digits + symbols
     password += random.choices(all_characters, k=length - 4)
 
