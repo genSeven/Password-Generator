@@ -20,13 +20,10 @@ def generate_password(length):
     ]
 
     # Fill the rest of the password length with random choices from all character sets
-    all_characters = lower + upper + digits + symbols
-    password += random.choices(all_characters, k=length - 4)
 
-    # Shuffle the password to ensure the first few characters aren't always predictable
     random.shuffle(password)
 
-    # Convert the list of characters into a string and return it
+    
     return ''.join(password)
 
 def main():
